@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+header {
+    background-color: rgb(245, 142, 8);
+    min-height: 150px;
+    position: relative;
+}
+
+header h1 {
+    position: relative;
+    top: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+footer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #456;
+}
+
+
+#img_recipe {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8),  rgba(0, 0, 0, 0.2)), url(../images/top-view-food-ingredients.jpg);
+    background-size: cover;
+    background-position: center;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#set_recipe {
+    padding-left: 50px;
+}
+
+.new_recipe_text {
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+.new_recipe_form {
+    background-color: orange;
+    display: inline-block;
+    padding: 15px;
+}
+
+.options {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: end;
+    font-weight: 600;
+    font-size: 20px;
+    left: 50px;
+}
+
+
+.options a {
+    padding-left: 20px;
+}
+
+.options a:hover {
+    color: green;
+    text-decoration: dashed;
+}
+
+#btn_input {
+    font-size: larger;
+    color: white;
+}

@@ -1,0 +1,68 @@
+body {
+    background-color: whitesmoke;
+}
+section {
+    background-image: url(../hand-drawn-recipe-book.avif);
+    min-height: 950px;
+
+}
+
+form {
+    width: max(400px, 50%);
+    margin: auto;
+    margin-top: 40px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: white;
+    margin-top: 0;
+    position: relative;
+    top: 20px;
+
+}
+form div input {
+    width: 100%;
+    padding: 15px 5px;
+    border-radius: 4px;
+    border: 1px solid #567;
+    margin-top: 10px;
+    outline: none;
+}
+
+form .sign {
+    text-align: center;
+}
+
+form .sign h3 {
+    font-size: 50px;
+}
+
+input:focus {
+    border-color: orange;
+    border-bottom: 2px solid #567;
+}
+form .btn {
+    text-align: center;
+}
+
+form .btn input {
+    width: 300px;
+    background-color: rgb(57, 57, 151);
+}
+
+form .btn input:hover {
+    background-color: blue;
+}
+
+#btn_input {
+    font-size: larger;
+    color: white;
+}
+
+#to_signin {
+    font-weight: 550;
+}
+
+#to_signin:hover {
+    opacity: 0.8;
+}

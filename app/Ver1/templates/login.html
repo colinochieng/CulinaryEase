@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Of Your Choice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Place of Your Choice</h1>
+        <nav class="options">
+            <a href="{{ url_for('scheme.sign_up') }}">Signup</a>
+            <a href="{{ url_for('scheme.login') }}">Login</a>
+        </nav>
+    </header>
+    <div id="img_recipe">
+        <div id="set_recipe">
+            <p class="new_recipe_text">HAPPY TO SHARE YOUR NEW RECIPE</p>
+            <a class='new_recipe_form' href="#">New Recipe</a>
+        </div>
+    </div>
+    <footer>
+        <p><strong>Explore your skills</strong></p>
+    </footer>
+</body>
+</html>
