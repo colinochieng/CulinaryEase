@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 from flask import render_template, request, jsonify
 from app.Ver1.views import scheme
-from schema.user import User
+from schema.users import User
 from schema.database.data_storage import storage
 
 
 
 @scheme.route('/sign_up')
 def sign_up():
-    return render_template('forms.html')
+    return render_template('signup.html')
 
 @scheme.route('/handle_form', methods=['GET', 'POST'])
 def handle_form():

@@ -1,8 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+header {
+    background-color: rgb(245, 142, 8);
+    min-height: 150px;
+    position: relative;
+}
+
+header h1 {
+    position: relative;
+    top: 20px;
+    text-align: center;
+    color: white;
+}
+
 body {
     background-color: whitesmoke;
 }
 section {
-    background-image: url(../hand-drawn-recipe-book.avif);
+    background-image: url(../images/hand-drawn-recipe-book.avif);
     min-height: 950px;
 
 }

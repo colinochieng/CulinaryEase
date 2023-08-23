@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Of Your Choice</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
     <header>
         <h1>Place of Your Choice</h1>
-        <nav class="options">
-            <a href="{{ url_for('scheme.sign_up') }}">Signup</a>
-            <a href="{{ url_for('scheme.login') }}">Login</a>
-        </nav>
     </header>
-    <div id="img_recipe">
-        <div id="set_recipe">
-            <p class="new_recipe_text">HAPPY TO SHARE YOUR NEW RECIPE</p>
-            <a class='new_recipe_form' href="#">New Recipe</a>
-        </div>
-    </div>
+        <section>
+            <form action="{{ url_for('scheme.handle_form') }}" method="post">
+                <div class="sign">
+                    <h3>Login</h3>
+                </div>
+                <div>
+                    <input type="text" id="email", name="email" placeholder="Email">
+                </div>
+                <div>
+                    <input type="password" id="password", name="password" placeholder="Password" required>
+                </div>
+                <div class="btn">
+                    <input id="btn_input" type="submit" value="Login">
+                    <p style="padding-top: 30px;">Don't have an account? <a id="to_signin" href="{{ url_for('scheme.sign_up') }}">Signup</a></p>
+                </div>    
+            </form>
+        </section>
     <footer>
         <p><strong>Explore your skills</strong></p>
     </footer>

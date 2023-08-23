@@ -2,9 +2,12 @@
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-from schema.recipe import Base
-from schema.user import User
-from schema.recipe import Recipe
+from schema.recipe import Recipe, Base
+from schema.users import User
+from schema.ingredients import Ingredient, RecipeIngredient
+from schema.likes import Likes
+from schema.comments import Comments
+
 
 
 class DataDriver:
@@ -27,8 +30,8 @@ class DataDriver:
     def save(self):
         self.__session.commit()
 
-    def get_user_by_email(self, cls, email):
-        return self.__session.query(cls).filter(cls.email == email).one_or_none()
+    def get_user_by_email(self, email):
+        return self.__session.query(User).filter(User.email == email).one_or_none()
 
     def close(self):
         self.__session.close()

@@ -1,0 +1,104 @@
+/* Style the main content */
+main {
+    padding: 20px;
+}
+
+.recipe-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style labels and inputs */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-top: #fea633fb solid 1px;
+    border-bottom: #333 solid 2px;
+}
+
+.ingredients {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.ingredients + .ingredients {
+    margin-top: 20px;
+}
+.ingredients .ingredients-fields {
+    width: 20%;
+}
+
+.delete-ingredient {
+    display: flex;
+    align-self: center;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media screen and (max-width: 680px) {
+    .ingredients {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .recipe-form {
+        max-width: 600px;
+    }
+}
+
+.delete-ingredient:hover {
+    background-color: rgba(255, 81, 0, 0.945);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Style the submit button */
+button[type="submit"], #add-ingredient {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-ingredient {
+    margin: 20px auto;
+}
+
+button[type="submit"]:hover, #add-ingredient:hover  {
+    background-color: #46b556;
+}

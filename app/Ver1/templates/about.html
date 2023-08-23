@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="../static/CSS/header.css">
+    <link rel="stylesheet" href="../static/CSS/home.css">
+    <link rel="stylesheet" href="../static/CSS/navs.css">
+    <link rel="stylesheet" href="../static/CSS/about.css">
+    <link rel="stylesheet" href="../static/CSS/footer.css">
+    <script src="https://kit.fontawesome.com/04cc8332d9.js" crossorigin="anonymous"></script>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <header>
+        <h1>Welcome to Our Website</h1>
+        <div id="accounts">
+            <a href="#home">
+                <img src="../static/images/user_860784.png" alt="Login" class="login">
+            </a>
+            <ul class="accounts-dropdown">
+                <li><a href="{{ url_for('scheme.login') }}">Login</a></li>
+                <li><a href="{{ url_for('scheme.sign_up') }}">Signup</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <ul class="navs">
+            <li><a href="#dinners">DINNERS</a></li>
+            <li><a href="#meals">MEALS</a></li>
+            <li><a href="#ingredients">INGREDIENTS</a></li>
+            <li><a href="#occasions">OCCASIONS</a></li>
+            <li>
+                <a href="#cuisines">CUISINES</a>
+                <ul class="dropdown">
+                    <li><a href="#">Germany</a></li>
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">Kenya</a></li>
+                    <li><a href="#">Russia</a></li>
+                </ul>
+            </li>
+            <li><a href="#kitchen-tips">KITCHEN TIPS</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="{{ url_for('scheme.about') }}">ABOUT US</a></li>
+        </ul>
+        <div class="menu-bar">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    
+    <main class="about-main">
+        <section class="about-us">
+            <div class="about-text">
+                <h1>Welcome to CulinaryEase</h1>
+                <p>At CulinaryEase, we are dedicated to transforming your cooking experience into a culinary journey filled with creativity, flavor, and community. Whether you're an aspiring chef or a home cook, our platform offers a range of tools and features designed to inspire, educate, and connect.</p>
+
+                <h2>Our Mission</h2>
+                <p>Our mission is to empower food enthusiasts of all skill levels to explore new cuisines, discover unique recipes, and master the art of cooking. We believe that cooking is more than just preparing meals—it's an expression of creativity, culture, and passion. CulinaryEase is your companion on this delicious adventure.</p>
+
+                <h2>Meet the Team</h2>
+                <p>Behind CulinaryEase is a team of passionate individuals who share a love for food and technology. Our diverse backgrounds and expertise come together to create a platform that caters to your culinary needs.</p>
+
+                <h3><a href="{{ url_for('scheme.portfolio') }}">Ochieng Colin - Founder & Developer</a></h3>
+                <p>Ochieng Colin is the visionary founder of CulinaryEase. With a background in web development and a passion for cooking, he saw the opportunity to merge technology and gastronomy into a seamless platform that enriches your cooking experience.</p>
+
+                <h3>Jessica Lee - Culinary Curator</h3>
+                <p>Jessica Lee brings her culinary expertise to the table as our Culinary Curator. With years of experience in professional kitchens and a knack for food trends, she ensures that the recipes on CulinaryEase are both delightful and reliable.</p>
+
+                <h3>Michael Chen - UX Designer</h3>
+                <p>Michael Chen is the creative mind behind CulinaryEase's user experience. With a keen eye for design and a passion for user-centered interfaces, he crafts the perfect digital environment for your culinary exploration.</p>
+
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you! Whether you have questions, suggestions, or just want to share your culinary journey, feel free to reach out to us. You can find our contact details on the <a href="/contact">Contact</a> page.</p>
+            </div>
+            <div class="about-image">
+                <img src="about_us_image.jpg" alt="Our Team" width="600" height="400">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../static/images/logo.png" alt="CulinaryEase Logo">
+                <p>CulinaryEase</p>
+            </div>
+            <div class="footer-links">
+                <a href="/about">About Us</a>
+                <a href="/recipes">Explore Recipes</a>
+                <a href="/contact">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+            <a href="#"><i class="fa-brands fa-trello"></i></a>
+        </div>
+        <div class="footer-info">
+            <p>Join us on a culinary journey that transcends borders and tantalizes taste buds.</p>
+        </div>
+        <div class="footer-credits">
+            <p>&copy; 2023 CulinaryEase. All rights reserved.</p>
+            <p>Designed with &#9829; by our talented team</p>
+        </div>
+    </footer>    
+  </body>
+</html>

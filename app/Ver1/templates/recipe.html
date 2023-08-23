@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/CSS/header.css">
+    <link rel="stylesheet" href="../static/CSS/home.css">
+    <link rel="stylesheet" href="../static/CSS/navs.css">
+    <link rel="stylesheet" href="../static/CSS/recipe.css">
+    <script src="https://kit.fontawesome.com/04cc8332d9.js" crossorigin="anonymous"></script>
+    
+    <title>Home Page</title>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Website</h1>
+        <div class="accounts-drive">
+            <div id="accounts">
+                <a href="#home">
+                    <img src="../static/images/user_860784.png" alt="Login" class="login">
+                </a>
+                <ul class="accounts-dropdown">
+                    <li><a href="{{ url_for('scheme.login') }}">Login</a></li>
+                    <li><a href="{{ url_for('scheme.sign_up') }}">Signup</a></li>
+                    <li><a href="#logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul class="navs">
+            <li><a href="#dinners">DINNERS</a></li>
+            <li><a href="#meals">MEALS</a></li>
+            <li><a href="#ingredients">INGREDIENTS</a></li>
+            <li><a href="#occasions">OCCASIONS</a></li>
+            <li>
+                <a href="#cuisines">CUISINES</a>
+                <ul class="dropdown">
+                    <li><a href="#">Germany</a></li>
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">Kenya</a></li>
+                    <li><a href="#">Russia</a></li>
+                </ul>
+            </li>
+            <li><a href="#kitchen-tips">KITCHEN TIPS</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="{{ url_for('scheme.about') }}">ABOUT US</a></li>
+        </ul>
+        <div class="menu-bar">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section class="recipe-form">
+            <h1>Add New Recipe</h1>
+            <form action="/submit_recipe" method="POST">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <!--ingredients section beginning-->
+                <!--
+================================================================
+Ingridients require three parts
+: the name => 
+: the amount =>
+: regional Cost =>
+================================================================
+
+                -->
+                <label for="ingredients">Ingredients:</label>
+
+                <div id="ingredients-container">
+                    <div class="ingredients">
+                      <!--Dataset-->
+                      <datalist id="measures-authorized">
+                        <option value="Teaspoon (tsp)"></option>
+                        <option value="Tablespoon (tbsp)"></option>
+                        <option value="Cup"></option>
+                        <option value="Fluid Ounce (fl oz)"></option>
+                        <option value="Pint (pt)"></option>
+                        <option value="Quart (qt)"></option>
+                        <option value="Gallon (gal)"></option>
+                        <option value="Gram (g)"></option>
+                        <option value="Kilogram (kg)"></option>
+                        <option value="Pound (lb)"></option>
+                        <option value="Ounce (oz)"></option>
+                        <option value="Milliliter (ml)"></option>
+                        <option value="Liter (L)"></option>
+                        <option value="Pinch"></option>
+                        <option value="Dash"></option>
+                        <option value="Slice"></option>
+                      </datalist>
+                    </div>
+                </div>
+                <button id="add-ingredient" type="button">Add Ingredient</button>
+
+<!--End of the ingredient section-->
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" name="instructions" required></textarea>
+
+                <label for="video_link">Video Link (optional):</label>
+                <input type="url" id="video_link" name="video_link" placeholder="Share a video link of your culinary masterpiece">
+
+                <label for="cuisine">Cuisine:</label>
+                <input type="text" id="cuisine" name="cuisine" placeholder="@country e.g. {{ states_name }}" required>
+
+                <label for="prep_time">Prep Time (minutes):</label>
+                <input type="number" id="prep_time" name="prep_time" min="0" required>
+
+                <label for="cook_time">Cook Time (minutes):</label>
+                <input type="number" id="cook_time" name="cook_time" min="0" required>
+
+                <label for="total_time">Total Time (minutes):</label>
+                <input type="number" id="total_time" name="total_time" min="0" readonly>
+
+                <label for="servings">Servings:</label>
+                <input type="number" id="servings" name="servings" min="0">
+
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" list="categories-list">
+                <datalist id="categories-list">
+                    <option value="Breakfast"></option>
+                    <option value="Brunch"></option>
+                    <option value="Lunch"></option>
+                    <option value="Dinner"></option>
+                    <option value="Desserts"></option>
+                    <option value="Beverages"></option>
+                    <option value="Vegetarian"></option>
+                    <option value="Vegan"></option>
+                    <option value="Gluten-Free"></option>
+                </datalist>
+
+                <label for="calories">Calories:</label>
+                <input type="number" id="calories" name="calories">
+
+                <label for="nutrition">Nutrition Information:</label>
+                <textarea id="nutrition" name="nutrition" required></textarea>
+
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes"></textarea>
+
+                <button type="submit" formmethod="post">Submit Recipe</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- script -->
+    <script src="../static/JS/recipe.js"></script>
+</body>
+</html>

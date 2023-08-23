@@ -1,0 +1,21 @@
+footer {
+    background-color: #3efe43;
+
+}
+
+.footer-logo {
+    display: inline-block;
+    max-width: 100px;
+    border: #333333 2px solid;
+}
+
+.footer-links {
+    display: inline-block;
+    max-width: 100px;
+    border: #333333 2px solid;
+}
+.footer-social {
+    display: inline-block;
+    max-width: 100px;
+    border: #333333 2px solid;
+}

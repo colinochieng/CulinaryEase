@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/CSS/header.css">
+    <link rel="stylesheet" href="../static/CSS/home.css">
+    <link rel="stylesheet" href="../static/CSS/navs.css">
+    <script src="https://kit.fontawesome.com/04cc8332d9.js" crossorigin="anonymous"></script>
+    <title>Home Page</title>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Website</h1>
+        <div class="accounts-drive">
+            <div id="accounts">
+                <a href="#home">
+                    <img src="../static/images/user_860784.png" alt="Login" class="login">
+                </a>
+                <ul class="accounts-dropdown">
+                    <li><a href="{{ url_for('scheme.login') }}">Login</a></li>
+                    <li><a href="{{ url_for('scheme.sign_up') }}">Signup</a></li>
+                    <li><a href="#logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul class="navs">
+            <li><a href="#dinners">DINNERS</a></li>
+            <li><a href="#meals">MEALS</a></li>
+            <li><a href="#ingredients">INGREDIENTS</a></li>
+            <li><a href="#occasions">OCCASIONS</a></li>
+            <li>
+                <a href="#cuisines">CUISINES</a>
+                <ul class="dropdown">
+                    <li><a href="#">Germany</a></li>
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">Kenya</a></li>
+                    <li><a href="#">Russia</a></li>
+                </ul>
+            </li>
+            <li><a href="#kitchen-tips">KITCHEN TIPS</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="{{ url_for('scheme.about') }}">ABOUT US</a></li>
+        </ul>
+        <div class="menu-bar">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <div id="img_recipe">
+        <div id="set_recipe">
+            <p class="new_recipe_text">HAPPY TO SHARE YOUR NEW RECIPE</p>
+            <a class='new_recipe_form' href="{{ url_for('scheme.new_recipe') }}">New Recipe</a>
+        </div>
+    </div>
+    <!-- Add your content for each section here -->
+</body>
+</html>
