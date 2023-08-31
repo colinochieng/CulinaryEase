@@ -57,12 +57,12 @@ def register():
         get_user = storage.get_user_by_email(data.get('email').lower())
 
         if get_user:
-            return make_response('Account with the email already exist', 406)
+            return make_response({"status": 'fail', 'message': 'Account with the email already exist'}, 406)
         else:
             get_user = storage.get_user_by_uname(data.get('username').lower())
 
             if get_user:
-                return make_response('Account with the username already exist', 409)
+                return make_response({"status": 'fail', 'message': 'Account with the username already exist'}, 409)
     
         user = User()
         address = Address()
