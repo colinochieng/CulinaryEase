@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../static/CSS/header.css">
     <link rel="stylesheet" href="../static/CSS/home.css">
     <link rel="stylesheet" href="../static/CSS/navs.css">
+    <link rel="stylesheet" href="../static/CSS/login.css">
+    <link rel="stylesheet" href="../static/CSS/signup.css">
     <link rel="stylesheet" href="../static/CSS/recipe.css">
     <script src="https://kit.fontawesome.com/04cc8332d9.js" crossorigin="anonymous"></script>
     
@@ -13,17 +15,23 @@
 
 </head>
 <body>
-    <header>
+    <header id="helo">
         <h1>Welcome to Our Website</h1>
+       
+        <div class="alert alert-warning">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            You are log in
+        </div>
+
         <div class="accounts-drive">
             <div id="accounts">
                 <a href="#home">
                     <img src="../static/images/user_860784.png" alt="Login" class="login">
                 </a>
                 <ul class="accounts-dropdown">
-                    <li><a href="{{ url_for('scheme.login') }}">Login</a></li>
-                    <li><a href="{{ url_for('scheme.sign_up') }}">Signup</a></li>
-                    <li><a href="#logout">Logout</a></li>
+                    <li><a id="loginBtn">Login</a></li>
+                    <li><a id="signUpBtn">Signup</a></li>
+                    <li><a href="/logout">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -145,12 +153,102 @@ Ingridients require three parts
                 <label for="notes">Notes:</label>
                 <textarea id="notes" name="notes"></textarea>
 
+                <div class="Recipes-cost">
+                    <li>
+                        <label for="currency">Currency</label>
+                        <input type="text" id="currency" class="payments" name="currency" placeholder="currency e.g U.S Dollar" required>
+                    </li>
+                    <li>
+                        <label for="TotalCost">Total Cost</label>
+                        <input type="number" class="payments" id="TotalCost" name="total_cost" required>
+                    </li>
+                </div>
+
                 <button type="submit" formmethod="post">Submit Recipe</button>
             </form>
         </section>
     </main>
 
+<!--
+    Login Popup
+-->
+<section class="popup">
+    <form action="/login" method="post" class="login-form">
+        <div class="sign">
+            <a class="closeLogin"><img id="img-close-login" src="../static/images/close_icon.png"alt="close"></a>
+            <h3>Login</h3>
+        </div>
+        <div>
+            <input type="text" id="email", name="email" placeholder="Email" required>
+            <span id="emailLoginError"></span>
+        </div>
+        <div>
+            <input type="password" id="password", name="password" placeholder="Password" required>
+            <span id="passLoginError"></span>
+        </div>
+        <div class="btn">
+            <input id="btn_input" type="submit" value="Login">
+            <p style="padding-top: 30px;">Don't have an account? <a id="to_signin">Signup</a></p>
+        </div>    
+    </form>
+</section>
+
+<!--
+End of Login form section
+-->
+
+<!--
+========================================
+Starting the signup section form
+========================================
+-->
+
+<section class="signup-popup">
+    <form class="sigup-form" action="{{ url_for('scheme.handle_form') }}" method="POST" enctype="multipart/form-data">
+        <div class="sign">
+            <a class="closeSignup"><img id="img-close-login" src="../static/images/close_icon.png"alt="close"></a>
+            <h3>Signup</h3>
+        </div>
+        <div>
+            <input type="text" id="uname", name="username" placeholder="username" maxlength="30" required>
+            <span id="unameError"></span>
+        </div>
+        <div>
+            <input type="email" id="emailCode", name="email" placeholder="Email" required>
+            <span id="emailError"></span>
+        </div>
+        <div>
+            <input type="password" id="passcode", name="password" placeholder="Password" required>
+            <span id="password-strength"></span>
+        </div>
+        <div>
+            <input type="text" id="country" name="country" placeholder="Country" required>
+            <span id="countryError"></span>
+            <input type="text" id="state" name="state" placeholder="State" required>
+            <span id="stateError"></span>
+            <input type="text" id="city" name="city" placeholder="City" required>
+            <span id="cityError"></span>
+        </div>
+        <div class="user-bios">
+            <label for="bios">Bios</label>
+            <textarea name="bios" id="bios" placeholder="Unlock Your Culinary Journey Here..." required></textarea>
+            <span id="biosError"></span>
+        </div>
+        <div class="set-your-image">
+            <input type="file" name="profile_picture" id="user-image" accept="image/*">
+            <label for="user-image" class="label-img">
+                <span id="selectedFileName">Upload Your Profile Picture</span>
+            </label>
+        </div>
+        <div class="btn">
+            <p>Already Have an Account? <a id="to_login">Login</a></p>
+            <input id='btn_input_login' type="submit" value="Signup">
+        </div>    
+    </form>
+</section>
     <!-- script -->
     <script src="../static/JS/recipe.js"></script>
+    <script src="../static/JS/main.js"></script>
+    <script src="../static/JS/validate.js"></script>
 </body>
 </html>

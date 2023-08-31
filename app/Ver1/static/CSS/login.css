@@ -1,47 +1,31 @@
-* {
-    margin: 0;
-    padding: 0;
+.popup, .signup-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
     box-sizing: border-box;
-    text-decoration: none;
-}
-
-
-header {
-    background-color: rgb(245, 142, 8);
-    min-height: 150px;
-    position: relative;
-}
-
-header h1 {
-    position: relative;
-    top: 20px;
-    text-align: center;
-    color: white;
-}
-
-body {
-    background-color: whitesmoke;
-}
-section {
-    background-image: url(../images/hand-drawn-recipe-book.avif);
-    min-height: 950px;
-
-}
-
-form {
     width: max(400px, 50%);
     margin: auto;
     margin-top: 40px;
     border: 1px solid #555;
     border-radius: 10px;
-    padding: 40px;
+    padding: 20px 40px;
     background-color: white;
     margin-top: 0;
     position: relative;
-    top: 20px;
+    top: 10%;
 
 }
-form div input {
+
+.login-form div input {
     width: 100%;
     padding: 15px 5px;
     border-radius: 4px;
@@ -50,11 +34,11 @@ form div input {
     outline: none;
 }
 
-form .sign {
+.login-form .sign {
     text-align: center;
 }
 
-form .sign h3 {
+.login-form .sign h3 {
     font-size: 50px;
 }
 
@@ -62,28 +46,57 @@ input:focus {
     border-color: orange;
     border-bottom: 2px solid #567;
 }
-form .btn {
+
+.login-form .btn {
     text-align: center;
 }
 
-form .btn input {
+.login-form .btn input {
     width: 300px;
     background-color: rgb(57, 57, 151);
+    transition: 10ms;
 }
 
-form .btn input:hover {
-    background-color: blue;
+@media screen and (max-width: 500px) {
+    .login-form {
+        width: 250px;
+    }
+    
+    .login-form .btn input {
+        width: 150px;
+    }
+}
+
+.login-form .btn input:hover {
+    opacity: 0.8;
 }
 
 #btn_input {
     font-size: larger;
     color: white;
+    cursor: pointer;
 }
+
 
 #to_signin {
     font-weight: 550;
+    color: rgba(10, 20, 255, 0.664);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #to_signin:hover {
     opacity: 0.8;
+}
+
+#img-close-login {
+    max-width: 8%;
+    max-height: 8%;
+}
+
+#passLoginError, #emailLoginError {
+    color: #0f0;
+    font-size: small;
+    font-style: italic;
+    font-family: monospace;
 }

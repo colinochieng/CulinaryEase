@@ -7,7 +7,7 @@ window.addEventListener("load", function() {
     const ingredientInput = document.createElement("div");
     ingredientInput.classList.add("ingredients");
     ingredientInput.innerHTML = `
-    <input type="text"  name="ingredient_name${ingredientCount}" placeholder="Ingredient name" maxlength="60" required>
+    <input type="text"  name="ingredient_name${ingredientCount}" placeholder="Description and name" maxlength="60" required>
     <input type="number" name="amount${ingredientCount}" placeholder="amount" min="0" required>
     <input type="text" name="unit${ingredientCount}" placeholder="measuring unit" list="measures-authorized" required>
     <input type="number" name="cost${ingredientCount}" placeholder="Cost @Unit" min="0" required>
@@ -49,5 +49,5 @@ window.addEventListener("load", function() {
     document.querySelectorAll('textarea').forEach((value, number) => {
       value.setAttribute('autocomplete', 'on');
     });
-});
+  });
 

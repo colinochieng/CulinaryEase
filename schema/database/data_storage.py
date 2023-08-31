@@ -32,6 +32,15 @@ class DataDriver:
 
     def get_user_by_email(self, email):
         return self.__session.query(User).filter(User.email == email).one_or_none()
+    
+    def get_user_by_uname(self, uname):
+        return self.__session.query(User).filter_by(username=uname).one_or_none()
+    
+    def delete(self, user):
+        """
+        delete user account
+        """
+        self.__session.delete(user)
 
     def close(self):
         self.__session.close()

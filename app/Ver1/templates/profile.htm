@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .profile-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .profile-bio {
+            font-size: 16px;
+            color: #666666;
+            margin-bottom: 20px;
+        }
+
+        .profile-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #999999;
+            margin-top: 10px;
+        }
+
+        .profile-details-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        {% if person.profile_picture == 'profile_picture.png' %}
+        <img class="profile-picture"  style="box-shadow: 1px 2px 2px #333333;" src="../../../static/images/portfolo_images/logo.png" alt="Profile Picture">
+        {% else %}
+        <img class="profile-picture"  style="box-shadow: 1px 2px 2px #333333;" src="../../../{{ person.profile_picture.replace('app/Ver1/', '') }}" alt="Profile Picture">
+        {% endif %}
+        <div class="profile-name">John Doe </div>
+        <div class="profile-bio">{{ person.bios }}</div>
+        <div class="profile-details">
+            <div class="profile-details-item">
+                <span class="icon">📍</span> {{ address.city }}, {{ address.country }}
+            </div>
+            <div class="profile-details-item">
+                <span class="icon">✉️</span> {{ person.email }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,9 +1,14 @@
-from app.Ver1.views import scheme
-from flask import render_template, request
-from flask import jsonify
+#!/usr/bin/python3
+"""
+Module dealing with sessions management, authentication
+creations of new recipe and accompaniments
+"""
 import json
-import requests
+from flask import jsonify, make_response
+from app.Ver1.views import scheme
 from schema.ingredients import Ingredient, RecipeIngredient
+from flask import render_template, request, redirect, session
+import requests
 from schema.recipe import Recipe
 from schema.database.data_storage import storage
 from schema.users import User
@@ -13,16 +18,38 @@ from schema.users import User
 def status():
     return jsonify({'Status': 'ok'})
 
-@scheme.route('/login')
+@scheme.route('/login', methods=["GET", "POST"])
 def login():
-    return render_template('login.html')
+    from flask import render_template_string
+    if request.method == 'GET':
+        return redirect('/', 302)
+
+    email = request.form.get("email").lower()
+    get_user = storage.get_user_by_email(email)
+    print(get_user.id)
+    
+    session['user_id'] = get_user.id
+    
+    return render_template_string("""
+<h1> Login </h1>
+""")
+
+@scheme.route("/logout")
+def logout():
+    session.pop('user_id', None)
+    return make_response(redirect('/', 302))
 
 
 @scheme.route('/new_recipe')
 def new_recipe():
-    response = requests.get('https://ipinfo.io/json')
-    data = response.json()
-    country = data["country"]
+    response, data, country = ('', '', '')
+    try:
+        response = requests.get('https://ipinfo.io/json')
+        data = response.json()
+        country = data["country"]
+    except requests.exceptions.ConnectionError:
+        pass
+
     state = None
     
     with open('app/Ver1/static/JS/states.json', 'r', encoding='utf-8') as file:
@@ -37,7 +64,10 @@ def new_recipe():
     if state:
         return render_template('recipe.html', states_name=state)
     else:
-        return render_template('recipe.html', states_name=country)
+        if country:
+            return render_template('recipe.html', states_name=country)
+        else:
+            return render_template('recipe.html', states_name='Korea')
     
 
 @scheme.route('/submit_recipe', methods=['GET', 'POST'])
@@ -46,6 +76,12 @@ def submit_new_recipe():
     handles incoming recipe form and serves it to the database
     """
     if request.method == 'POST':
+
+        #  Check if user is logged in
+
+        if not session.get('user_id'):
+            return render_template('recipe.html', not_logged_in=True)
+
         amounts = []
         costs = []
         ingredient_names = []
@@ -67,22 +103,12 @@ def submit_new_recipe():
         
         new_recipe_instance = Recipe()
         new_user = User()
-        new_user.username = 'Colin'
-        new_user.email = 'colin@okumu'
-        new_user.set_passwd('Colin')
+        
 
         new_recipe_instance.user_id = new_user.id
-        storage.new(new_user)
 
         for key, value in archive.items():
             new_recipe_instance.__setattr__(key, value)
-
-        archive.update({'newRecipe': new_recipe_instance.id})
-        archive.update({'User': new_user.id})
-        archive.update({'amounts': amounts})
-        archive.update({'costs': costs})
-        archive.update({'ingredient_names': ingredient_names})
-        archive.update({'units': units})
 
         for name, unit, quantity, cost in zip(ingredient_names, units, amounts, costs):
             new_ingredient = Ingredient()

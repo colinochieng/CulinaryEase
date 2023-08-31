@@ -23,18 +23,6 @@ header {
     position: relative;
 }
 
-header span a {
-    position: absolute;
-    right: 0px;
-    bottom: 10px;
-    color: #fff;
-    text-decoration: none;
-}
-
-header span a:hover {
-    color: #ff9900;
-}
-
 .accounts-drive {
     display: flex;
     justify-content: flex-end;

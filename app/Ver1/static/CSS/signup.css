@@ -1,0 +1,140 @@
+.sigup-form {
+    width: max(400px, 50%);
+    margin: auto;
+    margin-top: 40px;
+    height: 500px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: white;
+    margin-top: 0;
+    position: relative;
+    top: 20px;
+    overflow-y: scroll;
+    text-transform: capitalize;
+}
+.sigup-form div input {
+    width: 100%;
+    padding: 15px 5px;
+    border-radius: 4px;
+    border: 1px solid #567;
+    margin-top: 10px;
+    outline: none;
+}
+
+.sigup-form .sign {
+    text-align: center;
+}
+
+.sigup-form .sign h3 {
+    font-size: 50px;
+}
+
+
+.sigup-form .btn {
+    text-align: center;
+}
+
+.sigup-form .btn input {
+    width: 300px;
+    background-color: rgb(57, 57, 151);
+}
+
+@media screen and (max-width: 400px) {
+    .sigup-form {
+        width: 200px;
+    }
+    .sigup-form div input {
+        width: 80%;
+    }
+
+    .sigup-form .btn input {
+        width: 200px;
+        background-color: rgb(57, 57, 151);
+    }
+}
+
+.sigup-form .btn input:hover {
+    opacity: 0.8;
+}
+
+.sigup-form input:focus {
+    border: #567 solid 2px;
+    border-top: rgba(255, 166, 0, 0.829) solid 1px;
+    border-left: rgba(255, 166, 0, 0.829) solid 1px;
+}
+
+#to_login {
+    font-weight: 550;
+    color: rgba(10, 20, 255, 0.664);
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+#to_login:hover {
+    opacity: 0.8;
+}
+
+
+#unameError, #password-strength, #emailError, #biosError, #countryError, #stateError, #cityError {
+    color: #0f0;
+    font-size: small;
+    font-style: italic;
+    font-family: monospace;
+}
+
+.user-bios {
+    padding: 20px 0;
+}
+
+.user-bios label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#bios {
+    width: 100%;
+    min-height: 15px;
+    padding: 15px 5px;
+    border-radius: 4px;
+    border: 1px solid #567;
+    outline: none;
+    resize: vertical;
+}
+
+#bios:focus {
+    border: #567 solid 2px;
+    border-top: rgba(255, 166, 0, 0.829) solid 1px;
+    border-left: rgba(255, 166, 0, 0.829) solid 1px;
+}
+
+.set-your-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn_input_login {
+    font-size: larger;
+    color: white;
+    cursor: pointer;
+}
+
+#user-image {
+    outline: none;
+    border: none;
+    display: none;
+}
+
+.label-img {
+    background-color: #fea633fb;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.label-img:hover {
+    opacity: 0.8;
+}

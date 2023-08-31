@@ -102,3 +102,23 @@ button[type="submit"], #add-ingredient {
 button[type="submit"]:hover, #add-ingredient:hover  {
     background-color: #46b556;
 }
+.Recipes-cost li {
+    list-style: none;
+}
+.payments {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.Recipes-cost {
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+}
+
+.alert-warning {
+    color: #fff;
+    height: 50vh;
+    width: 50vw;
+    background-color: green;
+}

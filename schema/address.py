@@ -15,12 +15,21 @@ class Address(Base):
     __tablename__ = 'addresses'
     address_id = Column(String(60), primary_key=True)
     user_id = Column(String(60), ForeignKey('users.id', ondelete='CASCADE'))
-    street_address = Column(String(60))
     city = Column(String(60))
     state = Column(String(60))
-    postal_code = Column(String(60))
     country = Column(String(60))
-    is_default = Column(Boolean, default=False)
 
     def __init__(self):
         self.address_id = str(uuid.uuid4())
+
+
+    def to_dict(self):
+        """
+        Addresses dictionary
+        """
+        data = self.__dict__
+        
+        data.pop('_sa_instance_state', None)
+        data.pop('user_id', None)
+
+        return data

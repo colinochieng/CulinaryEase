@@ -5,7 +5,7 @@ Define the recipe class
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy import ForeignKey, Text, func
+from sqlalchemy import ForeignKey, Text, func, Numeric
 from sqlalchemy.orm import relationship
 from datetime import datetime
 import uuid
@@ -21,7 +21,7 @@ class Recipe(Base):
     __tablename__ = 'recipes'
     id = Column(String(60), primary_key=True)
     user_id = Column(String(60), ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
-    title = Column(Text, nullable=False)
+    title = Column(String(256), nullable=False, unique=True)
     description = Column(Text, nullable=False)
     # ingredients = relationship(
     #     'Ingredient',
@@ -42,6 +42,8 @@ class Recipe(Base):
     likes = relationship('Likes', backref='recipe')
     comments = relationship('Comments', backref='recipe')
     notes = Column(Text, nullable=True)
+    currency = Column(String(128), nullable=False)
+    total_cost = Column(Numeric(10, 2), nullable=False)
     recipe_ingredients = relationship("RecipeIngredient", back_populates="recipe", cascade="all, delete-orphan")
 
     def __init__(self):

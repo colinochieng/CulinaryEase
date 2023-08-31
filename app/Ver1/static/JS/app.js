@@ -91,13 +91,3 @@ formElem.onsubmit = (e)=> {
     parElem.style.display = 'none';
   },2000)
 }
-
-
-
-
-
-
-
-
-
-

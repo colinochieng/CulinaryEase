@@ -19,8 +19,9 @@ class User(Base):
     email = Column(String(128), nullable=False, unique=True)
     password_hash = Column(String(60), nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow(), nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow(), nullable=False)
     profile_picture = Column(String(120), nullable=False, default='profile_picture.png')
-    bio = Column(Text, nullable=True)
+    bios = Column(Text, nullable=True)
     recipes = relationship('Recipe', backref='artist')
     addresses = relationship('Address', backref='user')
 
@@ -37,8 +38,25 @@ class User(Base):
         return bcrypt.checkpw(PEPPER + password.encode('utf-8'), self.password_hash.encode('utf-8'))
 
     def to_dict(self):
-        return {
-            "id": self.id,
-            "first_name": self.first_name,
-            "surname": self.surname,
-            "email": self.email,}
+        """
+        compose user object to a dictionary
+        """
+        data = self.__dict__
+
+        data.pop('password_hash', None)
+
+        if len(self.recipes) > 0:
+            pass
+        else:
+            del data['recipes']
+        if len(self.addresses) > 0:
+            data.update({'addresses': data['addresses'][0].to_dict()})
+        else:
+            del data['addresses']
+
+        data.pop('_sa_instance_state', None)
+        data.pop('profile_picture', None)
+        data.pop('created_at', None)
+        data.pop('updated_at', None)
+
+        return data
