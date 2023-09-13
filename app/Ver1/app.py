@@ -10,26 +10,40 @@ from datetime import timedelta
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.url_map.strict_slashes = False
-# app.secret_key = 'pepperease'
 app.config['SECRET_KEY'] = 'pepperease'
-# app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_TYPE'] = 'filesystem'
 app.permanent_session_lifetime = timedelta(days=7)
 print(app.static_folder)
 
+# Register blueprints for modular routes
 app.register_blueprint(scheme)
 app.register_blueprint(blueprint)
+
+# Enable Cross-Origin Resource Sharing (CORS) for the ap
 CORS(app)
 storage.restart()
 
+
 @app.route('/', methods=['GET'])
 def home():
+    """
+    Render the home page.
+
+    Returns:
+        str: HTML content for the home page.
+    """
     return render_template('home.html', recipe_url='/recipe/123')
 
 
 @app.route('/usernames', methods=['POST'])
 @cross_origin(origins="http://192.168.0.13:5000/")
 def check_if_username_or_email_exists():
+    """
+    Render the home page.
+
+    Returns:
+        str: HTML content for the home page.
+    """
     user_by_email = None
     user_by_uname = None
     data = request.json
@@ -55,11 +69,15 @@ def check_if_username_or_email_exists():
 
     return jsonify(archive), 200
 
+
 @app.route('/logcheck', methods=['POST'])
 @cross_origin(origins="http://192.168.0.13:5000/")
 def logcheck():
     """
-    verify user email and password
+    Verify user email and password for login.
+
+    Returns:
+        json: A JSON response indicating the validation result.
     """
     email = request.json.get("email")
     password = request.json.get("password")
@@ -88,10 +106,11 @@ def logcheck():
 @app.teardown_request
 def close_app(error=None):
     """
-    close database connection
+    Close the database connection after each request.
     """
     storage.close()
 
 
+# Start the Flask application if this script is executed directly
 if __name__ == '__main__':
-    app.run(port=5000, host='0.0.0.0', debug=True)
+    app.run(port=5000, host='0.0.0.0', debug=False)

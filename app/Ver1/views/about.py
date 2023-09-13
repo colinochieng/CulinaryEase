@@ -7,4 +7,7 @@ from schema.database.data_storage import storage
 
 @scheme.route('/about_page')
 def about():
+    """
+    renders about us page
+    """
     return render_template('about.html')

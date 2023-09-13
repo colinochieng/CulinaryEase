@@ -14,12 +14,12 @@ from schema.users import User
 
 user_required = {'username': 'required',
                  'email': 'required',
-                 "password": 'required', 
+                 "password": 'required',
                  'bios': 'required'}
 
 address_required = {'city': 'required',
-                 'state': 'required',
-                 'country': 'required'}
+                    'state': 'required',
+                    'country': 'required'}
 
 
 def valid_email(email):
@@ -41,11 +41,12 @@ def register():
         data = request.json
 
         missing_for_user = [key for key in user_required if key not in data]
-        missing_for_address = [key for key in address_required if key not in data]
-        
+        missing_for_address = [
+            key for key in address_required if key not in data]
+
         if len(missing_for_user) > 0 or len(missing_for_address) > 0:
-            return make_response(jsonify({"All": 'Note all the fields listed are required execept this' ,**user_required, **address_required}), 400)
-        
+            return make_response(jsonify({"All": 'Note all the fields listed are required execept this', **user_required, **address_required}), 400)
+
         for key, value in data.items():
             if value.isspace() or value.__len__() == 0:
                 return abort(400, f'{key} cannot be empty')
@@ -63,7 +64,7 @@ def register():
 
             if get_user:
                 return make_response({"status": 'fail', 'message': 'Account with the username already exist'}, 409)
-    
+
         user = User()
         address = Address()
 
@@ -77,7 +78,7 @@ def register():
                     setattr(user, key, re.sub(r'\s+', ' ', value))
             else:
                 address.__setattr__(key, value)
-        
+
         user.addresses.append(address)
 
         storage.new(user)
@@ -95,7 +96,7 @@ def user_profile(username=None):
     storage.restart()
     if username:
         user = storage.get_user_by_uname(username.lower())
-        
+
         if user:
             user_data = {
                 "username": user.username.capitalize(),
@@ -106,10 +107,12 @@ def user_profile(username=None):
             }
             return make_response(user_data, 200)
         else:
-            response = {"message": "No user with the username given", 'status': 'fail'}
+            response = {
+                "message": "No user with the username given", 'status': 'fail'}
             return make_response(response, 400)
     else:
         abort(400)
+
 
 @blueprint.route('/user/update/<username>/<passcode>', methods=['PUT'])
 def update_user(username, passcode):
@@ -133,17 +136,19 @@ def update_user(username, passcode):
                         if key == 'email':
                             if not valid_email(value):
                                 return jsonify({'Account cannot be updated': 'Invalid: email'}), 203
-                            
-                            check_if_account_exists = storage.get_user_by_email(value.lower())
 
-                            if  check_if_account_exists:
+                            check_if_account_exists = storage.get_user_by_email(
+                                value.lower())
+
+                            if check_if_account_exists:
                                 return jsonify({'Request Failed': 'Account with the email exists'}), 403
                         elif key == 'bios':
                             value = re.sub(r"\s+", ' ', value)
                         elif key == 'username':
-                            check_if_account_exists = storage.get_user_by_uname(value.lower())
+                            check_if_account_exists = storage.get_user_by_uname(
+                                value.lower())
 
-                            if  check_if_account_exists:
+                            if check_if_account_exists:
                                 return jsonify({'Request Failed': 'Account with the username exists'}), 403
 
                         if key == 'email' or key == 'username':
@@ -157,8 +162,8 @@ def update_user(username, passcode):
             else:
                 return make_response({'status': 'fail', 'message': 'Only JSON'}, 400)
         else:
-            return jsonify({'status': 'fail', 'message': 'Invalid passcode'})                
-                            
+            return jsonify({'status': 'fail', 'message': 'Invalid passcode'})
+
     else:
         return {'status': 'fail', 'message': 'No user with such a username'}
 
@@ -168,7 +173,8 @@ def change():
     '''
     Allow users to change their account password.
     '''
-    response = make_response({'status': 'fail', 'message': 'Invalid Username'}, 400)
+    response = make_response(
+        {'status': 'fail', 'message': 'Invalid Username'}, 400)
     required = ['new_password', 'old_password', 'username']
 
     if request.is_json:
@@ -181,12 +187,12 @@ def change():
                     if len(value) < 8 or len(value) > len(new_value):
                         return make_response({'status': 'fail', 'message':
                                               "length less than 8 or password with white spaces"})
-        
-        lacking_data = [key for key in required if key not in  request.json]
+
+        lacking_data = [key for key in required if key not in request.json]
         print(request.json)
         if lacking_data.__len__() > 0:
             return make_response({'status': 'fail', 'message':
-                                              f"Lacking data {lacking_data}"})
+                                  f"Lacking data {lacking_data}"})
 
         username = request.json.get('username', None)
         password = request.json.get('old_password', None)

@@ -16,10 +16,22 @@ from schema.users import User
 
 @scheme.route('/status')
 def status():
+    """
+    Check the status of the scheme.
+
+    Returns:
+        json: A JSON response indicating the status as 'ok'.
+    """
     return jsonify({'Status': 'ok'})
 
 @scheme.route('/login', methods=["GET", "POST"])
 def login():
+    """
+    Handle user login.
+
+    Returns:
+        str: HTML content for the login page or a login confirmation message.
+    """
     from flask import render_template_string
     if request.method == 'GET':
         return redirect('/', 302)
@@ -36,6 +48,12 @@ def login():
 
 @scheme.route("/logout")
 def logout():
+    """
+    Handle user logout.
+
+    Returns:
+        response: A redirection response to the home page.
+    """
     session.pop('user_id', None)
     return make_response(redirect('/', 302))
 
@@ -73,7 +91,10 @@ def new_recipe():
 @scheme.route('/submit_recipe', methods=['GET', 'POST'])
 def submit_new_recipe():
     """
-    handles incoming recipe form and serves it to the database
+    Handle incoming recipe form and serve it to the database.
+
+    Returns:
+        json or str: A JSON response containing recipe data or an HTML response.
     """
     name = True
     if name:
@@ -103,15 +124,19 @@ def submit_new_recipe():
                 units.append(value)
             else:
                 archive.update({key: value})
-        
+
+         # Create a new Recipe instance
         new_recipe_instance = Recipe()
         new_user = User()
         
-
+        # Set the user_id of the new recipe to the user's ID
         new_recipe_instance.user_id = new_user.id
 
+        # Set attributes of the new recipe based on form data
         for key, value in archive.items():
             new_recipe_instance.__setattr__(key, value)
+
+        # Create Ingredient and RecipeIngredient instances for each ingredient
 
         for name, unit, quantity, cost in zip(ingredient_names, units, amounts, costs):
             new_ingredient = Ingredient()
@@ -127,7 +152,8 @@ def submit_new_recipe():
             new_recipe_ingredient.cost = cost
 
             storage.new(new_recipe_ingredient)
-        
+
+        # Save changes to the database
         storage.save()
 
         return archive
@@ -135,8 +161,20 @@ def submit_new_recipe():
 
 @scheme.route("/recipe/123")
 def display_recipe():
+    """
+    Display a specific recipe with ID 123.
+
+    Returns:
+        str: HTML content for displaying the recipe.
+    """
     return render_template('display.html')
 
 @scheme.route('/portfolio')
 def portfolio():
+    """
+    Display a portfolio page.
+
+    Returns:
+        str: HTML content for displaying the portfolio.
+    """
     return render_template('index.html')

@@ -9,7 +9,6 @@ from schema.database.data_storage import storage
 from schema.users import User
 
 
-
 UPLOAD_FOLDER = 'app/Ver1/static/artists/repository'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
@@ -17,6 +16,9 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 def allowed_files(filename):
     """
     validates if the file sent is a valid image source file
+    Attributes:
+        filename(string): name of passed filename
+    Return: (bool) True if valid file extension or else false
     """
     return '.' in filename and filename.rsplit(
         '.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -38,7 +40,7 @@ def handle_form():
     sets user address, and creates a new user account
     Handles the profile picture the user sets
     """
-    if request.method == 'POST':        
+    if request.method == 'POST':
         new_user = User()
         new_address = Address()
 
@@ -59,17 +61,19 @@ def handle_form():
         if 'profile_picture' in request.files:
             file = request.files.get('profile_picture')
             if file and allowed_files(file.filename):
-                filename = 'profile.' + secure_filename(file.filename).rsplit('.', 1)[1]
+                filename = 'profile.' + \
+                    secure_filename(file.filename).rsplit('.', 1)[1]
 
                 create_upload_folder_if_not_exists(new_user.username)
-                file.save(os.path.join(UPLOAD_FOLDER, new_user.username, filename))
+                file.save(os.path.join(UPLOAD_FOLDER,
+                          new_user.username, filename))
 
                 new_user.profile_picture = f'{UPLOAD_FOLDER}/{new_user.username}/{filename}'
-        
+
         new_user.addresses.append(new_address)
 
         storage.new(new_user)
-        
+
         storage.save()
 
         return request.form
