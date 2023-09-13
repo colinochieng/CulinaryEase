@@ -87,11 +87,12 @@ curl -X PUT http://192.168.0.15:5000/api/user/change-password/  -H "Content-Type
 ```
 
 ## Project Inspiration and Vision
-![img](https://miro.medium.com/v2/resize:fit:720/format:webp/1*Fkkpst7WEimo77FTqbF8TA.jpeg)
+![img](https://miro.medium.com/v2/resize:fit:720/format:webp/1*Fkkpst7WEimo77FTqbF8TA.jpeg)  
+
 Creating CulinaryEase was a labor of love born from a deep passion for both technology and the culinary arts. The inspiration behind this project was to bridge the gap between food enthusiasts, making it easier for them to connect, share, and explore their love for cooking. As a developer, I wanted to challenge myself to build a platform that not only offered technical solutions but also fostered a vibrant community.
 The technical challenge I set out to solve was to create a seamless and user-friendly platform where users could not only access a diverse array of recipes but also interact with each other through likes, comments, and personalized meal planning. This required mastering various technologies, from database design to front-end development, and implementing complex features like user authentication and recipe categorization.
 I won't deny that there were moments of struggle and self-doubt, especially when tackling intricate technical issues or refining the user interface. However, these challenges have been instrumental in my growth as a developer. They remind me of the relentless pursuit of excellence and the importance of perseverance.
-Looking ahead, I envision a next iteration of CulinaryEase that delves deeper into personalization, offering tailored recipe recommendations and enhanced user interactions. I also see room for integrating data analysis to analyze user preferences and suggest recipes based on their tastes. 
+Looking ahead, I envision a next iteration of CulinaryEase that delves deeper into personalization, offering tailored recipe recommendations and enhanced user interactions. I also see room for integrating data analysis to analyze user preferences and suggest recipes based on their tastes.   
 
-[For More](https://medium.com/@colinatjku/602cbd613b5b)
+[For More](https://medium.com/@colinatjku/602cbd613b5b)  
 [Author](https://www.linkedin.com/in/colin-okumu-a60729270/)
