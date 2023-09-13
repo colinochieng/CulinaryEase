@@ -43,9 +43,9 @@ nav a:hover {
     display: none;
 }
 
-ul li a:hover {
+/* ul li a:hover {
     background-color: #62f;
-}
+} */
 
 .navs li:hover ul.dropdown {
     display: block;

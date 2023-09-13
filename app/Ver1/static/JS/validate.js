@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const imageInput = document.querySelector('#user-image');
-    const selectedImageName = document.querySelector('#selectedFileName');
-    const allowedExtensions = ['png', 'jpg', 'jpeg', 'gif']
+export function imgValidate(inputId, spanId) {
+    const imageInput = document.querySelector(inputId);
+    const selectedImageName = document.querySelector(spanId);
+    const allowedExtensions = ['png', 'jpg', 'jpeg', 'gif'];
 
     imageInput.addEventListener("change", function() {
         const fileName = this.files[0].name;
@@ -15,7 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedImageName.textContent = "Only png, jpg, jpeg or gif allowed";
         }
     });
+}
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    imgValidate('#user-image', '#selectedFileName');
 
     // validate if the username or the email already exists
 
@@ -223,3 +227,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     })
 });
+

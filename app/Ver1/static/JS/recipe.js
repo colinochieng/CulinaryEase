@@ -1,3 +1,5 @@
+import { imgValidate } from "./validate.js";
+
 window.addEventListener("load", function() {
     const ingredientsContainer = document.getElementById("ingredients-container");
     const addIngredientButton = document.getElementById("add-ingredient");
@@ -49,5 +51,10 @@ window.addEventListener("load", function() {
     document.querySelectorAll('textarea').forEach((value, number) => {
       value.setAttribute('autocomplete', 'on');
     });
+
+    /**
+     * Recipe image upload
+     */
+    imgValidate('#user-recipe', '#imageFile');
   });
 

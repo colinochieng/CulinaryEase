@@ -1,0 +1,247 @@
+.recipe-display-head {
+    margin: 5%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.recipe-display-head h2 {
+    margin: auto;
+    text-align: center;
+    font-size: 48px;
+}
+
+.recipe-display-head p {
+    max-width: 60%;
+    font-size: large;
+    line-height: 2;
+}
+.recipe-display {
+    background-color: #fff;
+    width: 50%;
+    /* height: 3000px; */
+    margin: 5%;
+}
+
+@media screen and (max-width: 700px){
+    .recipe-display {
+        background-color: #fff;
+        width: 60%;
+        /* height: 3000px; */
+        margin: 5%;
+    }    
+}
+
+@media screen and (max-width: 500px){
+    .recipe-display {
+        background-color: #fff;
+        width: 80%;
+        /* height: 3000px; */
+        margin: 5%;
+    }    
+}
+
+@media screen and (max-width: 300px){
+    .recipe-display {
+        background-color: #fff;
+        width: 90%;
+        /* height: 3000px; */
+        margin: 5%;
+    }    
+}
+
+.list-recipe {
+    background-color: #fef;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 10%;
+    line-height: 1.8;
+}
+
+.recipe-img-tag img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.recipe-desc {
+    margin: 0 10%;
+    padding-bottom: 10%;
+}
+
+.recipe-desc a.recipe-tag {
+    display: block;
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(14, 13, 13);
+    margin-top: 5px;
+}
+
+.recipe-desc  .recipe-tag:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.get-recipe-btn {
+    display: block;
+    margin-top: 50px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+}
+
+.get-recipe-btn:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    opacity: 0.8;
+}
+
+/*
+Display Html
+*/
+
+.unveil-recipe {
+    /* background-color: #fef; */
+
+    width: 60vw;
+    margin: 5% 10%;
+}
+
+.unveil-recipe h2 {
+    text-align:start;
+}
+
+.the-img-recipe {
+    text-align: center;
+}
+
+.the-img-recipe img {
+    width: 50%;
+    height: 50%;
+}
+
+.like-comment {
+    margin-top: 20px;
+}
+
+.like-button, .comment-popup-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #fff; /* Change this color to your desired button color */
+    color: #333;
+    font-weight: 500;
+    border: solid #E74C3C 2px;
+    border-radius: 1px;
+    cursor: pointer;
+    margin-right: 80px;
+}
+
+.like-button:hover, .comment-popup-button:hover {
+    background-color: #E74C3C; /* Change this color to your desired hover color */
+    color: #ffffff;
+}
+
+
+#users-commets {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.users-comments {
+    display: flex;
+    gap: 10px;
+}
+
+
+.comment-box {
+    /* Set the width and height of the box */
+    flex-basis: 33.3%;
+    min-width: 300px;
+    min-height: 200px;
+
+    /* Use a linear gradient for the background color */
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+
+    /* Add some padding and margin for spacing */
+    padding: 20px;
+
+    /* Use a border radius to make the corners rounded */
+    border-radius: 15px;
+
+    /* Use a box shadow to create a shadow effect */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .comment-text {
+    /* Set the font size and color of the comment text */
+    font-size: 18px;
+    color: #333;
+  }
+
+  .comment-author {
+    /* Set the font size, color, and style of the comment author */
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+  }
+
+.like {
+    background-color: rgb(132, 194, 16);
+}
+
+
+/* CSS to style the form comment */
+.comment-popup {
+    font-family: Arial, sans-serif;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it's above other content */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) ,url(../images/recipes_images/JapaneseSushi.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.comment-popup form {
+    max-width: 600px;
+    margin: 20px auto;
+    color: #e0a708e7;
+    font-weight: 800;
+}
+
+.comment-popup-button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.comment-popup form label {
+    display: block;
+    width: 100%;
+}
+
+.submit-close {
+    display: flex;
+    gap: 20%;
+}
+
+.comment-popup #submit-comment-btn, .comment-popup .close-comment {
+    background-color: #ebbb1dd7;
+    color: #fff;
+    margin: auto;
+    padding: 2% 10%;
+    outline: none;
+    border-radius: 10px;
+}
+
+.comment-popup #submit-comment-btn:hover, .comment-popup .close-comment:hover {
+    opacity: 0.8;
+}

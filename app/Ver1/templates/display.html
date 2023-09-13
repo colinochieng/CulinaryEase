@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/CSS/header.css">
+    <link rel="stylesheet" href="../static/CSS/home.css">
+    <link rel="stylesheet" href="../static/CSS/navs.css">
+    <link rel="stylesheet" href="../static/CSS/login.css">
+    <link rel="stylesheet" href="../static/CSS/signup.css">
+    <link rel="stylesheet" href="../static/CSS/display.css">
+    <link rel="stylesheet" href="../static/CSS/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/04cc8332d9.js" crossorigin="anonymous"></script>
+    <script src="../static/JS/main.js"></script>
+    <title>Home Page</title>
+
+</head>
+<body>
+    <header>
+        <h1>Featured Recipe: Sushi</h1>
+        <div class="accounts-drive">
+            <div id="accounts">
+                <a href="#home">
+                    <img src="../static/images/user_860784.png" alt="Login" class="login">
+                </a>
+                <ul class="accounts-dropdown">
+                    <li><a id="loginBtn">Login</a></li>
+                    <li><a id="signUpBtn">Signup</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul class="navs">
+            <li><a href="#dinners">DINNERS</a></li>
+            <li><a href="#meals">MEALS</a></li>
+            <li><a href="#ingredients">INGREDIENTS</a></li>
+            <li><a href="#occasions">OCCASIONS</a></li>
+            <li>
+                <a href="#cuisines">CUISINES</a>
+                <ul class="dropdown">
+                    <li><a href="#">Germany</a></li>
+                    <li><a href="#">Japan</a></li>
+                    <li><a href="#">Kenya</a></li>
+                    <li><a href="#">Russia</a></li>
+                </ul>
+            </li>
+            <li><a href="#kitchen-tips">KITCHEN TIPS</a></li>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="{{ url_for('scheme.about') }}">ABOUT US</a></li>
+        </ul>
+        <div class="menu-bar">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    
+    <section class="unveil-recipe">
+        <h2>Japanese Sushi</h2>
+        <p>
+            Welcome to the website of Japanese Sushi, the ultimate destination for sushi lovers. Here you will find everything you need to know about sushi, the traditional Japanese dish of vinegared rice topped or wrapped with various ingredients, such as raw fish, seafood, vegetables, eggs, and more. Sushi is not only delicious, but also healthy, as it provides a balanced diet of carbohydrates, proteins, fats, vitamins, and minerals. Sushi is also an art form, as it requires skill and creativity to prepare and present. Whether you are a beginner or an expert, you will find something to suit your taste and level on this website.
+            One of the most popular and easy sushi recipes is the California roll, which is a type of maki sushi (rolled sushi) that contains crab meat, avocado, cucumber, and sesame seeds. It is usually served with soy sauce, wasabi (Japanese horseradish), and ginger. Here are the ingredients and instructions for making California rolls at home.
+        </p>
+        <div class="the-img-recipe">
+            <img src="../static/images/recipes_images/JapaneseSushi.jpg" alt="">
+        </div>
+        <div class="info-for-recipe">
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>2 cups of sushi rice (or short-grain white rice)</li>
+                <li>1/4 cup of rice vinegar</li>
+                <li>2 tablespoons of sugar</li>
+                <li>1 teaspoon of salt</li>
+                <li>4 sheets of nori (dried seaweed)</li>
+                <li>8 ounces of cooked crab meat (or imitation crab)</li>
+                <li>1 avocado, peeled and sliced</li>
+                <li>1/2 cucumber, peeled and sliced</li>
+                <li>2 tablespoons of toasted sesame seeds</li>
+                <li>A bamboo mat for rolling</li>
+                <li>Plastic wrap for covering the mat</li>
+            </ul>
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Cook the rice according to the package directions. Transfer the rice to a large bowl and let it cool slightly.</li>
+                <li>In a small saucepan over medium heat, combine the vinegar, sugar, and salt. Stir until the sugar and salt dissolve. Pour the vinegar mixture over the rice and toss gently to coat. Set aside.</li>
+                <li>Place the bamboo mat on a flat surface and cover it with plastic wrap. Place a sheet of nori on top of the mat, shiny side down. Spread about 1/2 cup of rice evenly over the nori, leaving a 1-inch border at the top edge. Sprinkle 1/2 tablespoon of sesame seeds over the rice.</li>
+                <li>Arrange about 2 ounces of crab meat along the center of the rice. Top with some avocado and cucumber slices.</li>
+                <li>Lift the bottom edge of the mat and roll it over the filling, tucking it in as you go. Continue rolling until you reach the top edge of the nori. Press gently to seal the roll. Repeat with the remaining ingredients to make three more rolls.</li>
+                <li>Cut each roll into six pieces using a sharp knife dipped in water. Serve with soy sauce, wasabi, and ginger.</li>
+            </ol>
+            <h3>Servings:</h3>
+            <p>This recipe makes four rolls or 24 pieces, which can serve four people as a main course or eight people as an appetizer.</p>
+            <p>Enjoy your homemade California rolls and explore more sushi recipes on this website. 😊</p>
+        </div>
+
+<!--
+    +++++++++++++++++++++++++++++ Like Comments div +++++++++++++++++++++++++++++++++
+-->
+        <div class="like-comment">
+            <button class="like-button" type="button" value="0"><i class="fa-regular fa-thumbs-up"> <span id="like-value"></span> </i></button>
+            <button type="button" class="comment-popup-button"> Add Comment </button>            
+        </div>
+
+<!--
+    ++++++++++++++++++++++++++++ Comments Div +++++++++++++++++++++++++++++++++++++++
+-->
+    <h2 id="users-commets">Comments</h2>
+    <div class="users-comments">
+        <div class="comment-box">
+            <p class="comment-text">This product is amazing! It works as advertised and it is very easy to use. I highly recommend it to anyone who needs a reliable and affordable solution.</p>
+            <p class="comment-author">- John Doe</p>
+        </div>
+        <div class="comment-box">
+            <p class="comment-text">This product is amazing! It works as advertised and it is very easy to use. I highly recommend it to anyone who needs a reliable and affordable solution.</p>
+            <p class="comment-author">- John Doe</p>
+        </div>
+        <div class="comment-box">
+            <p class="comment-text">This product is amazing! It works as advertised and it is very easy to use. I highly recommend it to anyone who needs a reliable and affordable solution.</p>
+            <p class="comment-author">- John Doe</p>
+        </div>
+    </div>
+
+    </section>
+
+    <!--
+        comments for the recipe {
+            username: "",
+            email: "",
+            ratings: int,
+            commnets: text
+        }
+        submit
+    -->
+
+    <section class="comment-popup" id="commentPopup">
+        <form action="/submit-comment" method="POST" class="send-comment">
+            <div>
+              <label for="name">Username:</label>
+              <input type="text" id="comments-username" name="username" required>
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="comments-email" name="email" required>
+            </div>
+            <div>
+              <label for="comment">Comment:</label>
+              <textarea id="comments-text" name="comment" rows="4" cols="40" required></textarea>
+            </div>
+            <!--<div id="errorMessages"></div>-->
+            <div class="submit-close">
+              <input type="submit" value="Submit" id="submit-comment-btn">
+              <button type="button" class="close-comment">Close</button>
+            </div>
+          </form>
+          
+    </section>
+    
+<!--
+    Login Popup
+-->
+<section class="popup">
+    <form action="/login" method="post" class="login-form">
+        <div class="sign">
+            <a class="closeLogin"><img id="img-close-login" src="../static/images/close_icon.png"alt="close"></a>
+            <h3>Login</h3>
+        </div>
+        <div>
+            <input type="text" id="email", name="email" placeholder="Email" required>
+            <span id="emailLoginError"></span>
+        </div>
+        <div>
+            <input type="password" id="password", name="password" placeholder="Password" required>
+            <span id="passLoginError"></span>
+        </div>
+        <div class="btn">
+            <input id="btn_input" type="submit" value="Login">
+            <p style="padding-top: 30px;">Don't have an account? <a id="to_signin">Signup</a></p>
+        </div>    
+    </form>
+</section>
+
+<!--
+End of Login form section
+-->
+
+<!--
+========================================
+Starting the signup section form
+========================================
+-->
+
+<section class="signup-popup">
+    <form class="sigup-form" action="{{ url_for('scheme.handle_form') }}" method="POST" enctype="multipart/form-data">
+        <div class="sign">
+            <a class="closeSignup"><img id="img-close-login" src="../static/images/close_icon.png"alt="close"></a>
+            <h3>Signup</h3>
+        </div>
+        <div>
+            <input type="text" id="uname", name="username" placeholder="username" maxlength="30" required>
+            <span id="unameError"></span>
+        </div>
+        <div>
+            <input type="email" id="emailCode", name="email" placeholder="Email" required>
+            <span id="emailError"></span>
+        </div>
+        <div>
+            <input type="password" id="passcode", name="password" placeholder="Password" required>
+            <span id="password-strength"></span>
+        </div>
+        <div>
+            <input type="text" id="country" name="country" placeholder="Country" required>
+            <span id="countryError"></span>
+            <input type="text" id="state" name="state" placeholder="State" required>
+            <span id="stateError"></span>
+            <input type="text" id="city" name="city" placeholder="City" required>
+            <span id="cityError"></span>
+        </div>
+        <div class="user-bios">
+            <label for="bios">Bios</label>
+            <textarea name="bios" id="bios" placeholder="Unlock Your Culinary Journey Here..." required></textarea>
+            <span id="biosError"></span>
+        </div>
+        <div class="set-your-image">
+            <input type="file" name="profile_picture" id="user-image" accept="image/*">
+            <label for="user-image" class="label-img">
+                <span id="selectedFileName">Upload Your Profile Picture</span>
+            </label>
+        </div>
+        <div class="btn">
+            <p>Already Have an Account? <a id="to_login">Login</a></p>
+            <input id='btn_input_login' type="submit" value="Signup">
+        </div>    
+    </form>
+</section>
+
+<!--
+=============================================================
+Ending signup section
+=============================================================
+-->
+
+
+<footer class="webpage-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Recipes.com</h3>
+          <img src="../static/images/logo.png" style="border-radius:4px" alt="Logo" width="100" height="100">
+          <p>Recipes.com is a website that provides delicious and easy recipes for everyone. Whether you are looking for breakfast, lunch, dinner, dessert, or snack ideas, you will find them here. You can also browse recipes by cuisine, ingredient, diet, occasion, and more.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="/new_recipe">New Recipe</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3>Social Media</h3>
+          <ul class="social-icons">
+            <li><a href="https://www.facebook.com/recipes"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.twitter.com/recipes"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/recipes"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter and get the latest recipes delivered to your inbox.</p>
+          <form action="subscribe.php" method="post">
+            <input type="email" name="email" placeholder="Enter your email" class="footer-input" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <p class="disclaimer"><a href="terms.html">Terms and Conditions</a> | <a href="privacy.html">Privacy Policy</a> | <a href="cookies.html">Cookie Policy</a></p>
+          <p class="copy">&copy; CulinaryEase.com 2023. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="../static/JS/likes_comments.js" type="module"></script>
+<script src="../static/JS/validate.js" type="module"></script>
+</body>
+</html>

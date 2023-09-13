@@ -17,11 +17,6 @@
 <body>
     <header id="helo">
         <h1>Welcome to Our Website</h1>
-       
-        <div class="alert alert-warning">
-            <i class="fa-solid fa-circle-exclamation"></i>
-            You are log in
-        </div>
 
         <div class="accounts-drive">
             <div id="accounts">
@@ -163,6 +158,12 @@ Ingridients require three parts
                         <input type="number" class="payments" id="TotalCost" name="total_cost" required>
                     </li>
                 </div>
+                <div class="recipe-image-upload">
+                    <input type="file" name="recipe_profile_path" id="user-recipe" accept="image/*">
+                    <label for="user-recipe" class="recipe-img">
+                        <span id="imageFile">Upload Recipe Image</span>
+                    </label>
+                </div>
 
                 <button type="submit" formmethod="post">Submit Recipe</button>
             </form>
@@ -247,8 +248,8 @@ Starting the signup section form
     </form>
 </section>
     <!-- script -->
-    <script src="../static/JS/recipe.js"></script>
-    <script src="../static/JS/main.js"></script>
-    <script src="../static/JS/validate.js"></script>
+    <script src="../static/JS/recipe.js" type="module"></script>
+    <script src="../static/JS/main.js" type="module"></script>
+    <script src="../static/JS/validate.js" type="module"></script>
 </body>
 </html>

@@ -44,6 +44,7 @@ class Recipe(Base):
     notes = Column(Text, nullable=True)
     currency = Column(String(128), nullable=False)
     total_cost = Column(Numeric(10, 2), nullable=False)
+    recipe_profile_path = Column(String(256), nullable=True)
     recipe_ingredients = relationship("RecipeIngredient", back_populates="recipe", cascade="all, delete-orphan")
 
     def __init__(self):

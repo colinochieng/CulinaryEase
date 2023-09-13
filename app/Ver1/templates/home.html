@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../static/CSS/navs.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     <link rel="stylesheet" href="../static/CSS/signup.css">
+    <link rel="stylesheet" href="../static/CSS/display.css">
+    <link rel="stylesheet" href="../static/CSS/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/04cc8332d9.js" crossorigin="anonymous"></script>
     <script src="../static/JS/main.js"></script>
     <title>Home Page</title>
@@ -45,7 +48,6 @@
                 </ul>
             </li>
             <li><a href="#kitchen-tips">KITCHEN TIPS</a></li>
-            <li><a href="#news">NEWS</a></li>
             <li><a href="#features">FEATURES</a></li>
             <li><a href="{{ url_for('scheme.about') }}">ABOUT US</a></li>
         </ul>
@@ -143,6 +145,229 @@ Starting the signup section form
 Ending signup section
 =============================================================
 -->
-<script src="../static/JS/validate.js"></script>
+
+<!--
+    +++++++++++++++++++++++++++++++ Recipes Listing ++++++++++++++++++++++++++++++++++++++++++++++
+-->
+
+<div class="recipe-display-head">
+    <h2>Access 10 Deliciously Diverse Culinary Creations: Explore the World of Flavors with These Recipes!</h2>
+    <p>
+        Are you ready to embark on a culinary adventure with CulinaryEase? Our program is your gateway to the world of delightful and nutritious home-cooked meals. Whether you're a novice in the kitchen or a seasoned cook, you'll discover a wealth of recipes and resources to fuel your culinary creativity. From mastering the art of meal planning to exploring diverse cuisines and techniques, we've got you covered. So, join us on this exciting journey, and let's savor the joy of cooking together. Whether you're here for easy weeknight dinners or gourmet feasts, our program has something special in store for you. Welcome to CulinaryEase, where every meal is a masterpiece waiting to be created!
+    </p>
+</div>
+
+<section class="recipe-display">
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/side-view-pilaf-with-stewed-beef-meat-plate.jpg" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Side view pilaf with stewed beef meat plate</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/double-hamburger-isolated-white-background-fresh-burger-fast-food-with-beef-cream-cheese.jpg" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Double hamburger isolated white background fresh burger fast food with beef cream cheese</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.avif" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Pizza filled with tomatoes salami olives</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/OIP.jpg" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Australian Damper</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/Empanadas.jpg" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Empanadas</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/Couscous and Tagine .jpg" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Couscous and Tagine </span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/JapaneseSushi.jpg" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Japanese Sushi</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="{{ recipe_url }}" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/Couscous-Royale.jpg" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Couscous Royale</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/Bibimbap.jpg" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >South Korean Bibimbap</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/Jerk-Chicken.jpg" alt="Jerk Chicken">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Jamaica Jerk Chicken</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+    <div class="list-recipe">
+        <div class="recipe-img-tag">
+            <img src="../static/images/recipes_images/Lebanese-Shawarma.jpg" alt="Pilaf">
+        </div>
+        <div class="recipe-desc">
+            <a href="#" class="recipe-tag"><span >Lebanese Shawarma</span></a>
+
+            <p>
+                A hearty and satisfying dish of tender beef chunks simmered in a rich gravy, served over fluffy rice pilaf with aromatic spices and vegetables. A perfect meal for cold days or when you crave some comfort food.
+            </p>
+
+            <a href="#" class="get-recipe-btn">Get Recipe</a>
+
+        </div>
+    </div>
+</section>
+
+<footer class="webpage-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Recipes.com</h3>
+          <img src="../static/images/logo.png" style="border-radius:4px" alt="Logo" width="100" height="100">
+          <p>Recipes.com is a website that provides delicious and easy recipes for everyone. Whether you are looking for breakfast, lunch, dinner, dessert, or snack ideas, you will find them here. You can also browse recipes by cuisine, ingredient, diet, occasion, and more.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="/new_recipe">New Recipe</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3>Social Media</h3>
+          <ul class="social-icons">
+            <li><a href="https://www.facebook.com/recipes"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.twitter.com/recipes"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/recipes"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter and get the latest recipes delivered to your inbox.</p>
+          <form action="subscribe.php" method="post">
+            <input type="email" name="email" placeholder="Enter your email" class="footer-input" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <p class="disclaimer"><a href="terms.html">Terms and Conditions</a> | <a href="privacy.html">Privacy Policy</a> | <a href="cookies.html">Cookie Policy</a></p>
+          <p class="copy">&copy; CulinaryEase.com 2023. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="../static/JS/validate.js" type="module"></script>
 </body>
 </html>

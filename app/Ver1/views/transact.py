@@ -75,6 +75,9 @@ def submit_new_recipe():
     """
     handles incoming recipe form and serves it to the database
     """
+    name = True
+    if name:
+        return request.form
     if request.method == 'POST':
 
         #  Check if user is logged in
@@ -128,6 +131,11 @@ def submit_new_recipe():
         storage.save()
 
         return archive
+    
+
+@scheme.route("/recipe/123")
+def display_recipe():
+    return render_template('display.html')
 
 @scheme.route('/portfolio')
 def portfolio():

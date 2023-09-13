@@ -24,7 +24,7 @@ storage.restart()
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('home.html')
+    return render_template('home.html', recipe_url='/recipe/123')
 
 
 @app.route('/usernames', methods=['POST'])

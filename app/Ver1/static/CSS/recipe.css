@@ -122,3 +122,24 @@ button[type="submit"]:hover, #add-ingredient:hover  {
     width: 50vw;
     background-color: green;
 }
+
+#user-recipe {
+    display: none;
+}
+
+.recipe-image-upload {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+}
+.recipe-img {
+    text-align: center;
+    background-color: #fea633fb;
+    margin: 0 0 5px;
+    padding: 12px;
+    max-width: 40%;
+    border-radius: 4px;
+    cursor: pointer;
+}

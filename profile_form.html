@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile Form</title>
+</head>
+<body>
+    <h2>Profile Information</h2>
+    <form action="/submit_profile" method="post" enctype="multipart/form-data">
+        <label for="profile_picture">Profile Picture:</label>
+        <input type="file" id="profile_picture" name="profile_picture"><br><br>
+        
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
