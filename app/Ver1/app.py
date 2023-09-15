@@ -113,4 +113,4 @@ def close_app(error=None):
 
 # Start the Flask application if this script is executed directly
 if __name__ == '__main__':
-    app.run(port=5000, host='0.0.0.0', debug=False)
+    app.run(port=5000, host='0.0.0.0', debug=True)

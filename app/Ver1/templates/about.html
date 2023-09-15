@@ -14,24 +14,29 @@
     <link rel="stylesheet" href="../static/CSS/about.css">
     <link rel="stylesheet" href="../static/CSS/footer.css">
     <script src="https://kit.fontawesome.com/04cc8332d9.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/04cc8332d9.js" crossorigin="anonymous"></script>
     <title>Hello, world!</title>
   </head>
   <body>
     <header>
         <h1>Welcome to Our Website</h1>
-        <div id="accounts">
-            <a href="#home">
-                <img src="../static/images/user_860784.png" alt="Login" class="login">
-            </a>
-            <ul class="accounts-dropdown">
-                <li><a href="{{ url_for('scheme.login') }}">Login</a></li>
-                <li><a href="{{ url_for('scheme.sign_up') }}">Signup</a></li>
-                <li><a href="#logout">Logout</a></li>
-            </ul>
+        <div class="accounts-drive">
+            <div id="accounts">
+                <a href="/">
+                    <img src="../static/images/user_860784.png" alt="Login" class="login">
+                </a>
+                <ul class="accounts-dropdown">
+                    <li><a id="loginBtn">Login</a></li>
+                    <li><a id="signUpBtn">Signup</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </header>
     <nav>
         <ul class="navs">
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
             <li><a href="#dinners">DINNERS</a></li>
             <li><a href="#meals">MEALS</a></li>
             <li><a href="#ingredients">INGREDIENTS</a></li>
@@ -46,7 +51,6 @@
                 </ul>
             </li>
             <li><a href="#kitchen-tips">KITCHEN TIPS</a></li>
-            <li><a href="#news">NEWS</a></li>
             <li><a href="#features">FEATURES</a></li>
             <li><a href="{{ url_for('scheme.about') }}">ABOUT US</a></li>
         </ul>
@@ -67,50 +71,58 @@
                 <h2>Meet the Team</h2>
                 <p>Behind CulinaryEase is a team of passionate individuals who share a love for food and technology. Our diverse backgrounds and expertise come together to create a platform that caters to your culinary needs.</p>
 
-                <h3><a href="{{ url_for('scheme.portfolio') }}">Ochieng Colin - Founder & Developer</a></h3>
+                <h3><a href="{{ url_for('scheme.portfolio') }}" id="founder">Ochieng Colin - Founder & Developer</a></h3>
                 <p>Ochieng Colin is the visionary founder of CulinaryEase. With a background in web development and a passion for cooking, he saw the opportunity to merge technology and gastronomy into a seamless platform that enriches your cooking experience.</p>
 
-                <h3>Jessica Lee - Culinary Curator</h3>
-                <p>Jessica Lee brings her culinary expertise to the table as our Culinary Curator. With years of experience in professional kitchens and a knack for food trends, she ensures that the recipes on CulinaryEase are both delightful and reliable.</p>
-
-                <h3>Michael Chen - UX Designer</h3>
-                <p>Michael Chen is the creative mind behind CulinaryEase's user experience. With a keen eye for design and a passion for user-centered interfaces, he crafts the perfect digital environment for your culinary exploration.</p>
-
                 <h2>Contact Us</h2>
-                <p>We'd love to hear from you! Whether you have questions, suggestions, or just want to share your culinary journey, feel free to reach out to us. You can find our contact details on the <a href="/contact">Contact</a> page.</p>
-            </div>
-            <div class="about-image">
-                <img src="about_us_image.jpg" alt="Our Team" width="600" height="400">
+                <p>We'd love to hear from you! Whether you have questions, suggestions, or just want to share your culinary journey, feel free to reach out to us. You can find our contact details on the <a href="mailto:colinokumu89@gmail.com?subject=Suggestions&body=Message%20content">Contact</a> page.</p>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-logo">
-                <img src="../static/images/logo.png" alt="CulinaryEase Logo">
-                <p>CulinaryEase</p>
+    <footer class="webpage-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h3>Recipes.com</h3>
+              <img src="../static/images/logo.png" style="border-radius:4px" alt="Logo" width="100" height="100">
+              <p>Recipes.com is a website that provides delicious and easy recipes for everyone. Whether you are looking for breakfast, lunch, dinner, dessert, or snack ideas, you will find them here. You can also browse recipes by cuisine, ingredient, diet, occasion, and more.</p>
             </div>
-            <div class="footer-links">
-                <a href="/about">About Us</a>
-                <a href="/recipes">Explore Recipes</a>
-                <a href="/contact">Contact Us</a>
+            <div class="col-md-4">
+              <h3>Navigation</h3>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="/new_recipe">New Recipe</a></li>
+              </ul>
             </div>
+            <div class="col-md-4">
+              <h3>Social Media</h3>
+              <ul class="social-icons">
+                <li><a href="https://www.facebook.com/recipes"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.twitter.com/recipes"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/recipes"><i class="fa fa-instagram"></i></a></li>
+                <a href="https://discord.com/channels/@me"><i class="fa-brands fa-discord"></i></a>
+                <a style="display: block;" href="https://medium.com/@colinatjku/crafting-culinaryease-a-recipe-sharing-journey-602cbd613b5b"><i class="fa-brands fa-medium"></i></a>
+              </ul>
+              <h3>Newsletter</h3>
+              <p>Subscribe to our newsletter and get the latest recipes delivered to your inbox.</p>
+              <form action="subscribe.php" method="post">
+                <input type="email" name="email" placeholder="Enter your email" class="footer-input" required>
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <hr>
+              <p class="disclaimer"><a href="terms.html">Terms and Conditions</a> | <a href="privacy.html">Privacy Policy</a> | <a href="cookies.html">Cookie Policy</a></p>
+              <p class="copy">&copy; CulinaryEase.com 2023. All rights reserved.</p>
+            </div>
+          </div>
         </div>
-        <div class="footer-social">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-discord"></i></a>
-            <a href="#"><i class="fa-brands fa-trello"></i></a>
-        </div>
-        <div class="footer-info">
-            <p>Join us on a culinary journey that transcends borders and tantalizes taste buds.</p>
-        </div>
-        <div class="footer-credits">
-            <p>&copy; 2023 CulinaryEase. All rights reserved.</p>
-            <p>Designed with &#9829; by our talented team</p>
-        </div>
-    </footer>    
+      </footer>    
   </body>
 </html>

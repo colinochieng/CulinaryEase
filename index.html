@@ -1,0 +1,108 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CulinaryEase - Your Recipe Sharing Platform</title>
+    <link rel="stylesheet" href="./styles.css">
+
+    <style>
+        /* This is the CSS code to style the video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* This is the aspect ratio of 16:9 (9 / 16 * 100) */
+            height: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        /* This is the CSS code to make the video responsive */
+        .video-container video {
+            width: 80%;
+            height: 100%;
+        }
+        
+      </style>
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div id="text-head">
+            <h1>CulinaryEase</h1>
+            <p>A Fusion of Technology and Gastronomy</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <!-- Feature Section -->
+    <section id="features" class="feature-section">
+        <div class="feature">
+            <img src="Sharing.jpeg" alt="Feature 1">
+            <h2>Recipe Sharing</h2>
+            <p>Share your cherished recipes with the culinary community and discover new favorites.</p>
+        </div>
+        <div class="feature">
+            <img src="./User.jpeg" alt="Feature 2">
+            <h2>User Interaction</h2>
+            <p>Interact with fellow food enthusiasts by liking, commenting, and sharing recipes.</p>
+        </div>
+        <div class="feature">
+            <img src="JSON.png" alt="Feature 3">
+            <h2>JSON-Driven APIs</h2>
+            <p>Seamlessly exchange recipe data with external applications and services through our robust JSON-driven API.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About CulinaryEase</h2>
+        
+        <p>
+            CulinaryEase aspires to become more than just a recipe sharing platform; it aims to evolve into a thriving culinary community and a comprehensive resource hub for food enthusiasts of all levels. It was born from a burning curiosity and a love for technology and cooking. Our ambitions extend to fostering a space where users can not only discover and share delightful recipes but also engage in meaningful culinary discussions, exchange cooking tips and techniques, and embark on culinary journeys together. We envision CulinaryEase as a place where culinary novices can learn from seasoned chefs, where creative minds can experiment with flavors, and where the joy of cooking is celebrated in its entirety. Ultimately, our ambition is to continuously enhance the platform, introducing new features and resources that empower users to explore the endless possibilities of the culinary world while nurturing their love for food and cooking. This project reflects not only my technical prowess but also my dedication to self-improvement and my unwavering curiosity to explore the intersection of technology and taste.
+        </p>
+        <p id="welcome">Join me on this culinary exploration!</p>
+        <!--<div class="video-container">
+            <!-- This is the HTML code to embed the YouTube video 
+            <iframe src="./Home Page - Google Chrome 2023-09-15 17-46-09.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>-->
+        <div class="video-container">
+            <!-- This is the HTML code to embed the video using the <video> element -->
+            <video controls loop muted autoplay>
+                <source src="./Home Page - Google Chrome 2023-09-15 17-46-09.mp4" type="video/mp4">
+                <!-- Add more source elements for different video formats if needed -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <h2 id="clone">Continuing the Culinary Adventure</h2>
+        <p class="clone">
+            As we wrap up this culinary journey, we invite you to join us on this flavorful ride. CulinaryEase is more than just a project; it's a vibrant, growing community where the love for food and technology merge into a delicious blend. We're not just sharing recipes; we're sharing stories, innovations, and the pure joy of cooking. So, what's next on the menu? It's up to you! Fork or clone our project, become a part of our culinary family, and let's cook up something extraordinary together. Explore the code, experiment with features, and make it your own. Let's collaborate and create something extraordinary.
+        </p>
+        <!-- Team Links -->
+        <div class="team-links">
+
+            <a href="https://www.linkedin.com/in/colin-okumu-a60729270/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/colinochieng/CulinaryEase" target="_blank">GitHub</a>
+            <a href="https://medium.com/@colinatjku/crafting-culinaryease-a-recipe-sharing-journey-602cbd613b5b" target="_blank">Medium</a>
+        </div>
+
+        <!-- GitHub Repository Link -->
+        <a href="https://github.com/colinochieng/CulinaryEase" class="btn">View on GitHub</a>
+    </section>
+
+    <footer>
+        <p id="p-footer">&copy; 2023 CulinaryEase. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
